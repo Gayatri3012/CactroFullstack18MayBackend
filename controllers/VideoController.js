@@ -65,7 +65,7 @@ exports.updateVideoDetails = async (req, res) => {
       const data = await response.json();
   
       await EventLog.create({
-        type: 'video_updated',
+        eventType: 'video_updated',
         description: `Video updated - Title: "${title}", Description: "${description}"`,
         videoId,
       });
